@@ -1,298 +1,36 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>Tetris of Code</title>
-  
-<style type="text/css">
-</style>
-</head>
-<body onload="tetris.play('scene')" onkeydown="tetris.handleKey(event)">
+<script>yt.setConfig({APIARY_HOST: "",APIARY_HOST_FIRSTPARTY: "",GAPI_HINT_PARAMS: "m;\/_\/scs\/abc-static\/_\/js\/k=gapi.gapi.en.DTPeBB_SvOA.O\/m=__features__\/rt=j\/d=1\/rs=AHpOoo-J3J0yqNDMPVrmQT6j-SBFfGx8oA",XHR_APIARY_HOST: "youtubei.youtube.com",INNERTUBE_API_KEY: "AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8",INNERTUBE_CONTEXT_CLIENT_VERSION: "1.20170517",INNERTUBE_CONTEXT_CLIENT_NAME: 1,INNERTUBE_API_VERSION: "v1",'VISITOR_DATA': "CgtDU09jZVB5cEZGNA%3D%3D",'GAPI_HOST': "https:\/\/apis.google.com",'GAPI_LOCALE': "en_US",'INNERTUBE_CONTEXT_HL': "en",'INNERTUBE_CONTEXT_GL': "US",'XHR_APIARY_HOST': "youtubei.youtube.com"});yt.setConfig({'ROOT_VE_TYPE': 11487});yt.setConfig({'EVENT_ID': "lCQeWdL-CI-YuQL3zLzQBA",'PAGE_NAME': "unlimited",'LOGGED_IN': true,'SESSION_INDEX': 0,'VALID_SESSION_TEMPDATA_DOMAINS': ["www.youtube.com","gaming.youtube.com"],'PARENT_TRACKING_PARAMS': "",'FORMATS_FILE_SIZE_JS': ["%s B","%s KB","%s MB","%s GB","%s TB"],'DELEGATED_SESSION_ID': null,'ONE_PICK_URL': "",'UNIVERSAL_HOVERCARDS': true,'GOOGLEPLUS_HOST': "https:\/\/plus.google.com",'PAGEFRAME_JS': "\/yts\/jsbin\/www-pageframe-vflLCSQgk\/www-pageframe.js",'GAPI_LOADER_URL': "\/yts\/jsbin\/www-gapi-loader-vflhG8S-8\/www-gapi-loader.js",'JS_COMMON_MODULE': "\/yts\/jsbin\/www-en_US-vflIDjHOC\/common.js",'PAGE_FRAME_DELAYLOADED_CSS': "\/yts\/cssbin\/www-pageframedelayloaded-2x-webp-vflgGC14U.css",'EXPERIMENT_FLAGS': {"block_spf_search_ads_impressions":true,"autoplay_pause_sampling_fraction":0.0,"desktop_notification_set_title_bar":true,"service_worker_scope":"\/","enable_youtubei_innertube":true,"use_push_for_desktop_live_chat":true,"enable_server_side_search_pyv":true,"service_worker_push_home_only":true,"botguard_periodic_refresh":true,"chat_smoothing_animations":84,"desktop_pyv_on_watch_override_lact":true,"enable_more_related_ve_logging":true,"comment_deep_link":true,"navigation_only_csi_reset":true,"watch_next_pause_autoplay_lact_sec":0,"youtubei_for_web":true,"desktop_pyv_on_watch_missing_params":true,"log_window_onerror_fraction":0.1,"web_gel_lact":true,"consent_url_override":"","service_worker_push_enabled":true,"autoescape_tempdata_url":true,"service_worker_push_prompt_cap":1,"clear_web_implicit_clicktracking":true,"player_interaction_logging":true,"warm_load_nav_start_web":true,"web_logging_max_batch":50,"service_worker_enabled":true,"player_swfcfg_cleanup":true,"cold_load_nav_start_web":true,"same_domain_static_resources_desktop":true,"app_settings_snapshot_is_logging_enabled":true,"desktop_pyv_on_watch_via_valor":true,"gfeedback_for_signed_out_users_enabled":true,"remove_web_visibility_batching":true,"app_settings_snapshot_min_time_between_snapshots_hours":24},'GUIDE_DELAY_LOAD': true,'GUIDE_DELAYLOADED_CSS': "\/yts\/cssbin\/www-guide-2x-webp-vfl3gVm7m.css",'HIGH_CONTRAST_MODE_CSS': "\/yts\/cssbin\/www-highcontrastmode-2x-webp-vfl2GEdSa.css",'PREFETCH_LINKS': false,'PREFETCH_LINKS_MAX': 1,'PREFETCH_AUTOPLAY': false,'PREFETCH_AUTOPLAY_TIME': 10,'PREFETCH_AUTONAV': false,'PREBUFFER_MAX': 1,'PREBUFFER_LINKS': false,'PREBUFFER_AUTOPLAY': false,'PREBUFFER_AUTONAV': false,'WATCH_LATER_BUTTON': "\n\n  \u003cbutton class=\"yt-uix-button yt-uix-button-size-small yt-uix-button-default yt-uix-button-empty yt-uix-button-has-icon no-icon-markup addto-button video-actions spf-nolink hide-until-delayloaded addto-watch-later-button yt-uix-tooltip\" type=\"button\" onclick=\";return false;\" role=\"button\" title=\"Watch Later\" data-video-ids=\"__VIDEO_ID__\"\u003e\u003c\/button\u003e\n",'WATCH_QUEUE_BUTTON': "  \u003cbutton class=\"yt-uix-button yt-uix-button-size-small yt-uix-button-default yt-uix-button-empty yt-uix-button-has-icon no-icon-markup addto-button addto-queue-button video-actions spf-nolink hide-until-delayloaded addto-tv-queue-button yt-uix-tooltip\" type=\"button\" onclick=\";return false;\" title=\"Queue\" data-style=\"tv-queue\" data-video-ids=\"__VIDEO_ID__\"\u003e\u003c\/button\u003e\n",'WATCH_QUEUE_MENU': "  \u003cspan class=\"thumb-menu dark-overflow-action-menu video-actions\"\u003e\n    \u003cbutton aria-haspopup=\"true\" aria-expanded=\"false\" class=\"yt-uix-button-reverse flip addto-watch-queue-menu spf-nolink hide-until-delayloaded yt-uix-button yt-uix-button-dark-overflow-action-menu yt-uix-button-size-default yt-uix-button-has-icon no-icon-markup yt-uix-button-empty\" type=\"button\" onclick=\";return false;\" \u003e\u003cspan class=\"yt-uix-button-arrow yt-sprite\"\u003e\u003c\/span\u003e\u003cul class=\"watch-queue-thumb-menu yt-uix-button-menu yt-uix-button-menu-dark-overflow-action-menu hid\"\u003e\u003cli role=\"menuitem\" class=\"overflow-menu-choice addto-watch-queue-menu-choice addto-watch-queue-play-next yt-uix-button-menu-item\" data-action=\"play-next\" onclick=\";return false;\"  data-video-ids=\"__VIDEO_ID__\"\u003e\u003cspan class=\"addto-watch-queue-menu-text\"\u003ePlay next\u003c\/span\u003e\u003c\/li\u003e\u003cli role=\"menuitem\" class=\"overflow-menu-choice addto-watch-queue-menu-choice addto-watch-queue-play-now yt-uix-button-menu-item\" data-action=\"play-now\" onclick=\";return false;\"  data-video-ids=\"__VIDEO_ID__\"\u003e\u003cspan class=\"addto-watch-queue-menu-text\"\u003ePlay now\u003c\/span\u003e\u003c\/li\u003e\u003c\/ul\u003e\u003c\/button\u003e\n  \u003c\/span\u003e\n",'SAFETY_MODE_PENDING': false,'LOCAL_DATE_TIME_CONFIG': {"formatLongDateOnly":"MMMM d, yyyy","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"shortWeekdays":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dateFormats":["MMMM d, yyyy h:mm a","MMMM d, yyyy","MMM d, yyyy","MMM d, yyyy"],"formatShortTime":"h:mm a","formatLongDate":"MMMM d, yyyy h:mm a","formatWeekdayShortTime":"EE h:mm a","weekendRange":[6,5],"firstDayOfWeek":0,"formatShortDate":"MMM d, yyyy","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"firstWeekCutoffDay":3,"weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"amPms":["AM","PM"]},'PAGE_CL': 156331596,'PAGE_BUILD_LABEL': "youtube_20170517_0_RC1",'VARIANTS_CHECKSUM': "9fe585704beef86a46befab3fc7b3e0a",'CLIENT_PROTOCOL': "h2",'CLIENT_TRANSPORT': "quic",'MDX_ENABLE_CASTV2': true,'MDX_ENABLE_QUEUE': true,'FEEDBACK_BUCKET_ID': "Other",'FEEDBACK_LOCALE_LANGUAGE': "en",'FEEDBACK_LOCALE_EXTRAS': {"logged_in":true,"experiments":"3300012,3300012,3300101,3300101,3300134,3300134,3300161,3300161,3313275,3313275,3313321,3313321,9415398,9416475,9419979,9420289,9422596,9423555,9431012,9432939,9433870,9434046,9434289,9434949,9438309,9439294,9440054,9441194,9442387,9442746,9443914,9444189,9444771,9445139,9446054,9446364,9446446,9448302,9449072,9449243,9450707,9451814,9451827,9453167,9453897,9454394,9454653,9455031,9456445,9456628,9456640,9457115,9457141,9457169,9457541,9458116,9458265,9458703,9459075,9459445,9459792,9459802,9459987,9460059,9460098,9460350,9460554,9460829,9460959,9461124,9461777,9462018,9462032,9462127,9463460,9463554,9463594,9463616,9463936,9463963,9463965,9464207,9464440,9464887,9464889,9465184,9465513,9465652,9465813,9466767,9466783,9466793,9466795,9466797,9466835,9467001,9467155,9467217,9467400,9467448,9467472,9467508,9467510,9467512,9467659,9467700,9467778,9467795,9467806,9467820,9467822,9468110,9468195,9468228,9468285,9468325,9468476,9468552,9468797,9468799,9468805,9469041,9469192,9469224,9469556,9469563,9469609,9469615,9469734,9469862,9469883,9469887,9469911,9469934,9469939,9469943,9469953,9470040,9470299,9470791,9470919,9470982,9471103,9471125,9471263,9471415,9471482,9471955,9472010,9472178,9472401,9472450,9472485,9472609,9472611,9472711,9472760,9473198,9473202,9473371,9473387,9473406,9473473,9473514,9473533,9473576,9473719,9473897,9473977,9474064,9474396,9474565,9474579,9474596,9474633,9474767,9474813,9475219,9475226,9475335,9475461,9475552,9475712,9475978,9476124,9476228,9476324","accept_language":"en-US,en;q=0.8"}});   yt.setConfig({
+    'GUIDED_HELP_LOCALE': "en_US",
+    'GUIDED_HELP_ENVIRONMENT': "prod"
+  });
+yt.setConfig('SPF_SEARCH_BOX', true);yt.setMsg({'ADDTO_CREATE_NEW_PLAYLIST': "Create new playlist\n",'ADDTO_CREATE_PLAYLIST_DYNAMIC_TITLE': "  $dynamic_title_placeholder (create new)\n",'ADDTO_WATCH_LATER': "Watch Later",'ADDTO_WATCH_LATER_ADDED': "Added",'ADDTO_WATCH_LATER_ERROR': "Error",'ADDTO_WATCH_QUEUE': "Watch Queue",'ADDTO_WATCH_QUEUE_ADDED': "Added",'ADDTO_WATCH_QUEUE_ERROR': "Error",'ADDTO_TV_QUEUE': "Queue",'ADS_INSTREAM_FIRST_PLAY': "A video ad is playing.",'ADS_INSTREAM_SKIPPABLE': "Video ad can be skipped.",'ADS_OVERLAY_IMPRESSION': "Ad displayed.",'MASTHEAD_NOTIFICATIONS_LABEL': {"case0": "0 unread notifications.", "case1": "1 unread notification.", "other": "# unread notifications."},'MASTHEAD_NOTIFICATIONS_COUNT_99PLUS': "99+",'MDX_AUTOPLAY_OFF': 'Autoplay is off','MDX_AUTOPLAY_ON': 'Autoplay is on'});  yt.setConfig('FEED_PRIVACY_CSS_URL', "\/yts\/cssbin\/www-feedprivacydialog-2x-webp-vfl4GS7Ly.css");
+  yt.setConfig('FEED_PRIVACY_LIGHTBOX_ENABLED', true);
+yt.setConfig({'SBOX_JS_URL': "\/yts\/jsbin\/www-searchbox-legacy-vfl3Lm0DF\/www-searchbox-legacy.js",'SBOX_SETTINGS': {"HAS_ON_SCREEN_KEYBOARD":false,"IS_FUSION":false,"SESSION_INDEX":0,"SUGG_EXP_ID":"ytd_en_us_arm_6","PSUGGEST_TOKEN":"ZG3x1vLpPykzuwLfO60yhg","REQUEST_DOMAIN":"us","REQUEST_LANGUAGE":"en","PQ":""},'SBOX_LABELS': {"SUGGESTION_DISMISSED_LABEL":"Suggestion dismissed","SUGGESTION_DISMISS_LABEL":"Remove"}});  yt.setConfig({
+    'YPC_LOADER_JS': "\/yts\/jsbin\/www-ypc-vflB7kPQ8\/www-ypc.js",
+    'YPC_LOADER_CSS': "\/yts\/cssbin\/www-ypc-2x-webp-vflkEDJ0A.css",
+    'YPC_SIGNIN_URL': "https:\/\/accounts.google.com\/ServiceLogin?passive=true\u0026continue=http%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26authuser%3D0%26app%3Ddesktop%26next%3D%252F%26hl%3Den\u0026uilel=3\u0026service=youtube\u0026authuser=0\u0026hl=en",
+    'DBLCLK_ADVERTISER_ID': "2542116",
+    'DBLCLK_YPC_ACTIVITY_GROUP': "youtu444",
+    'SUBSCRIPTION_URL': "\/subscription_ajax",
+    'YPC_SWITCH_URL': "\/signin?action_handle_signin=true\u0026skip_identity_prompt=True\u0026feature=purchases\u0026authuser=0\u0026next=%2F",
+    'YPC_GB_LANGUAGE': "en_US",
+    'YPC_MB_URL': "https:\/\/payments.google.com\/payments\/v4\/js\/integrator.js?ss=md",
+    'YPC_TRANSACTION_URL': "\/transaction_handler",
+    'YPC_SUBSCRIPTION_URL': "\/ypc_subscription_ajax",
+    'YPC_POST_PURCHASE_URL': "\/ypc_post_purchase_ajax",
+    'YTR_FAMILY_CREATION_URL': "https:\/\/families.google.com\/webcreation?usegapi=1",
+    'YTO_GTM_DATA': {'event': 'purchased', 'purchaseStatus': 'success'},
+    'YTO_GTM_1_BUTTON_CLICK_DATA': {'event': 'landingButtonClick', 'buttonPosition': '1'},
+    'YTO_GTM_2_BUTTON_CLICK_DATA': {'event': 'landingButtonClick', 'buttonPosition': '2'}
+  });
+  yt.setMsg({
+    'YPC_OFFER_OVERLAY': "      \u003cdiv id=\"ypc-offer-overlay\" class=\"yt-uix-overlay\"\u003e\n      \u003cspan class=\"yt-uix-overlay-target\"\u003e\u003c\/span\u003e\n          \u003cdiv class=\"yt-dialog hid \"\u003e\n    \u003cdiv class=\"yt-dialog-base\"\u003e\n      \u003cspan class=\"yt-dialog-align\"\u003e\u003c\/span\u003e\n      \u003cdiv class=\"yt-dialog-fg\" role=\"dialog\"\u003e\n        \u003cdiv class=\"yt-dialog-fg-content\"\u003e\n          \u003cdiv class=\"yt-dialog-loading\"\u003e\n              \u003cdiv class=\"yt-dialog-waiting-content\"\u003e\n      \u003cp class=\"yt-spinner \"\u003e\n        \u003cspan class=\"yt-spinner-img  yt-sprite\" title=\"Loading icon\"\u003e\u003c\/span\u003e\n\n    \u003cspan class=\"yt-spinner-message\"\u003e\nLoading...\n    \u003c\/span\u003e\n  \u003c\/p\u003e\n\n  \u003c\/div\u003e\n\n          \u003c\/div\u003e\n          \u003cdiv class=\"yt-dialog-content\"\u003e\n            \u003cdiv class= \"ypc-offer-overlay-container\"\u003e\u003ca href=\"#\" class=\"ypc-offer-overlay-close\" role=\"button\" tabindex=\"0\" aria-label=\"Close\"\u003e\u003c\/a\u003e\u003cdiv class=\"ypc-offer-overlay-content-wrapper clearfix\"\u003e\u003c\/div\u003e\u003cdiv class=\"ypc-offer-overlay-loading\"\u003e  \u003cspan class=\"yt-material-spinner-img yt-sprite\" title=\"Loading icon\"\u003e\u003c\/span\u003e\n\u003c\/div\u003e\u003cdiv class=\"ypc-offer-overlay-error\"\u003e\u003ch3\u003eError\u003c\/h3\u003e\u003cp class=\"ypc-offer-overlay-error-generic-content\"\u003eAn error occurred. Please try again later.\u003c\/p\u003e\u003cp class=\"ypc-offer-overlay-error-custom-content\"\u003e\u003c\/p\u003e\u003c\/div\u003e\u003cdiv class=\"ypc-offer-overlay-not-available-error\"\u003e\u003ch3 class=\"ypc-offer-overlay-not-available-title\"\u003ePurchases are not available\u003c\/h3\u003e\u003cp class=\"ypc-offer-overlay-not-available-content\"\u003e\u003c\/p\u003e  \u003cdiv class=\"ypc-offer-overlay-not-available-action yt-uix-overlay-actions\"\u003e\n    \u003cbutton class=\"yt-uix-button yt-uix-button-size-default yt-uix-button-primary yt-uix-overlay-close\" type=\"button\" onclick=\";return false;\"\u003e\u003cspan class=\"yt-uix-button-content\"\u003eClose\u003c\/span\u003e\u003c\/button\u003e\n  \u003c\/div\u003e\n\u003c\/div\u003e\u003cdiv class=\"ypc-offer-overlay-tip-not-available-error\"\u003e\u003ch3 class=\"ypc-offer-overlay-not-available-title\"\u003eTipping is not available\u003c\/h3\u003e\u003cp class=\"ypc-offer-overlay-tip-not-available-content\"\u003e\u003c\/p\u003e  \u003cdiv class=\"ypc-offer-overlay-not-available-action yt-uix-overlay-actions\"\u003e\n    \u003cbutton class=\"yt-uix-button yt-uix-button-size-default yt-uix-button-primary yt-uix-overlay-close\" type=\"button\" onclick=\";return false;\"\u003e\u003cspan class=\"yt-uix-button-content\"\u003eClose\u003c\/span\u003e\u003c\/button\u003e\n  \u003c\/div\u003e\n\u003c\/div\u003e\u003cdiv class=\"ypc-offer-plus-page-not-available-error\"\u003e\u003ch3 class=\"ypc-offer-overlay-not-available-title\"\u003ePurchases are not available\u003c\/h3\u003e\u003cp class=\"ypc-offer-plus-page-not-available-content\"\u003e\u003c\/p\u003e  \u003cdiv class=\"ypc-offer-overlay-not-available-action yt-uix-overlay-actions\"\u003e\n    \u003cbutton class=\"yt-uix-button yt-uix-button-size-default yt-uix-button-primary yt-uix-overlay-close\" type=\"button\" onclick=\";return false;\"\u003e\u003cspan class=\"yt-uix-button-content\"\u003eClose\u003c\/span\u003e\u003c\/button\u003e\n  \u003c\/div\u003e\n\u003c\/div\u003e\u003c\/div\u003e\n          \u003c\/div\u003e\n          \u003cdiv class=\"yt-dialog-working\"\u003e\n              \u003cdiv class=\"yt-dialog-working-overlay\"\u003e\u003c\/div\u003e\n  \u003cdiv class=\"yt-dialog-working-bubble\"\u003e\n    \u003cdiv class=\"yt-dialog-waiting-content\"\u003e\n        \u003cp class=\"yt-spinner \"\u003e\n        \u003cspan class=\"yt-spinner-img  yt-sprite\" title=\"Loading icon\"\u003e\u003c\/span\u003e\n\n    \u003cspan class=\"yt-spinner-message\"\u003e\n        Working...\n    \u003c\/span\u003e\n  \u003c\/p\u003e\n\n      \u003c\/div\u003e\n  \u003c\/div\u003e\n\n          \u003c\/div\u003e\n        \u003c\/div\u003e\n        \u003cdiv class=\"yt-dialog-focus-trap\" tabindex=\"0\"\u003e\u003c\/div\u003e\n      \u003c\/div\u003e\n    \u003c\/div\u003e\n  \u003c\/div\u003e\n\n\n    \u003c\/div\u003e\n\n",
+    'YPC_UNSUBSCRIBE_OVERLAY': "      \u003cdiv id=\"ypc-unsubscribe-overlay\" class=\"yt-uix-overlay\" data-disable-shortcuts=\"true\"\u003e\n      \u003cspan class=\"yt-uix-overlay-target\"\u003e\u003c\/span\u003e\n          \u003cdiv class=\"yt-dialog hid \"\u003e\n    \u003cdiv class=\"yt-dialog-base\"\u003e\n      \u003cspan class=\"yt-dialog-align\"\u003e\u003c\/span\u003e\n      \u003cdiv class=\"yt-dialog-fg\" role=\"dialog\"\u003e\n        \u003cdiv class=\"yt-dialog-fg-content\"\u003e\n          \u003cdiv class=\"yt-dialog-loading\"\u003e\n              \u003cdiv class=\"yt-dialog-waiting-content\"\u003e\n      \u003cp class=\"yt-spinner \"\u003e\n        \u003cspan class=\"yt-spinner-img  yt-sprite\" title=\"Loading icon\"\u003e\u003c\/span\u003e\n\n    \u003cspan class=\"yt-spinner-message\"\u003e\nLoading...\n    \u003c\/span\u003e\n  \u003c\/p\u003e\n\n  \u003c\/div\u003e\n\n          \u003c\/div\u003e\n          \u003cdiv class=\"yt-dialog-content\"\u003e\n              \u003cdiv class=\"ypc-unsubscribe-overlay\"\u003e\n      \u003cdiv class=\"ypc-unsubscribe-overlay-title unsubscribe-confirm\"\u003e\nAre you sure you want to unsubscribe?\n  \u003c\/div\u003e\n\n  \u003cdiv class=\"ypc-unsubscribe-overlay-title unsubscribe-xauth\"\u003e\nUnable to unsubscribe\n  \u003c\/div\u003e\n\n  \u003cdiv class=\"ypc-unsubscribe-overlay-title unsubscribe-plus-page-error\"\u003e\nUnable to unsubscribe\n  \u003c\/div\u003e\n\n  \u003cdiv class=\"ypc-unsubscribe-overlay-title unsubscribe-loading\"\u003e\nLoading...\n  \u003c\/div\u003e\n\n  \u003cdiv class=\"ypc-unsubscribe-overlay-title unsubscribe-success unsubscribe-delayed ypc-unsubscribe-overlay-title-success\"\u003e\n    Subscription canceled\n\n  \u003c\/div\u003e\n\n  \u003cdiv class=\"ypc-unsubscribe-overlay-title unsubscribe-error\"\u003e\nPurchase not canceled\n  \u003c\/div\u003e\n\n    \u003cdiv class=\"ypc-unsubscribe-overlay-data\"\u003e\n        \u003cdiv class=\"ypc-unsubscribe-overlay-content unsubscribe-confirm ypc-unsubscribe-overlay-confirm-content\"\u003e\n    \u003cdiv class=\"ypc-unsubscribe-overlay-content-message\"\u003e\n      Your subscription will be canceled when you unsubscribe. Your credit card will no longer be charged. You will still be able to access content until the billing cycle ends.\n\n    \u003c\/div\u003e\n  \u003c\/div\u003e\n\n  \u003cdiv class=\"ypc-unsubscribe-overlay-content unsubscribe-xauth\"\u003e\n    \u003cp\u003e\nYouTube Music Key is included free with your Google Play Music subscription. To cancel, please visit the \u003ca href=\"https:\/\/play.google.com\/music\/listen#\/settings\" target=\"_blank\"\u003eSettings\u003c\/a\u003e page in Google Play Music.\n    \u003c\/p\u003e\n  \u003c\/div\u003e\n\n  \u003cdiv class=\"ypc-unsubscribe-overlay-content unsubscribe-plus-page-error\"\u003e\n    \u003cp\u003e\nYou are currently logged in as a manager of toxic tech, but you must be the owner to cancel the channel's subscriptions on YouTube.\n    \u003c\/p\u003e\n  \u003c\/div\u003e\n\n  \u003cdiv class=\"ypc-unsubscribe-overlay-content unsubscribe-loading\"\u003e\n      \u003cp class=\"yt-spinner \"\u003e\n        \u003cspan class=\"yt-spinner-img  yt-sprite\" title=\"Loading icon\"\u003e\u003c\/span\u003e\n\n    \u003cspan class=\"yt-spinner-message\"\u003e\n        Processing cancellation request...\n    \u003c\/span\u003e\n  \u003c\/p\u003e\n\n  \u003c\/div\u003e\n\n  \u003cdiv class=\"ypc-unsubscribe-overlay-content unsubscribe-success ypc-unsubscribe-overlay-content-success\"\u003e\n    \u003cp\u003eYou have successfully canceled future payments for this subscription.\n\u003c\/p\u003e\n  \u003c\/div\u003e\n\n  \u003cdiv class=\"ypc-unsubscribe-overlay-content unsubscribe-delayed\"\u003e\n    \u003cp\u003e\nYour subscription was canceled. The status displayed in your account will update soon.\n    \u003c\/p\u003e\n  \u003c\/div\u003e\n\n  \u003cdiv class=\"ypc-unsubscribe-overlay-content unsubscribe-error\"\u003e\n    \u003cp\u003e\nWe weren't able to cancel your order. Try again later, or contact \u003ca href=\"https:\/\/support.google.com\/youtube\/?p=commerce_contact\u0026amp;hl=en\" target=\"_blank\"\u003esupport\u003c\/a\u003e.\n    \u003c\/p\u003e\n  \u003c\/div\u003e\n\n          \u003cdiv class=\"ypc-unsubscribe-overlay-controls unsubscribe-confirm clearfix\"\u003e\n    \u003ca href=\"\/\/support.google.com\/youtube\/?p=unsubscribe_help\u0026amp;hl=en\" class=\"yt-uix-button  ypc-unsubscribe-help yt-uix-sessionlink yt-uix-button-default yt-uix-button-size-default\" data-sessionlink=\"ei=lCQeWdL-CI-YuQL3zLzQBA\" target=\"_blank\"\u003e\u003cspan class=\"yt-uix-button-content\"\u003eHelp\u003c\/span\u003e\u003c\/a\u003e\n\n    \u003cbutton class=\"yt-uix-button yt-uix-button-size-default yt-uix-button-default yt-uix-overlay-close ypc-unsubscribe-keep\" type=\"button\" onclick=\";return false;\"\u003e\u003cspan class=\"yt-uix-button-content\"\u003eKeep subscription\u003c\/span\u003e\u003c\/button\u003e\n\n    \u003cbutton class=\"yt-uix-button yt-uix-button-size-default yt-uix-button-primary ypc-unsubscribe-confirm\" type=\"button\" onclick=\";return false;\" data-url=\"\/transaction_handler\"\u003e\u003cspan class=\"yt-uix-button-content\"\u003eUnsubscribe\u003c\/span\u003e\u003c\/button\u003e\n  \u003c\/div\u003e\n\n\n  \u003cdiv class=\"ypc-unsubscribe-overlay-controls unsubscribe-success unsubscribe-xauth unsubscribe-plus-page-error unsubscribe-delayed unsubscribe-error\"\u003e\n    \u003cbutton class=\"yt-uix-button yt-uix-button-size-default yt-uix-button-primary yt-uix-overlay-close\" type=\"button\" onclick=\";return false;\"\u003e\u003cspan class=\"yt-uix-button-content\"\u003eClose\u003c\/span\u003e\u003c\/button\u003e\n  \u003c\/div\u003e\n\n    \u003c\/div\u003e\n  \u003c\/div\u003e\n\n          \u003c\/div\u003e\n          \u003cdiv class=\"yt-dialog-working\"\u003e\n              \u003cdiv class=\"yt-dialog-working-overlay\"\u003e\u003c\/div\u003e\n  \u003cdiv class=\"yt-dialog-working-bubble\"\u003e\n    \u003cdiv class=\"yt-dialog-waiting-content\"\u003e\n        \u003cp class=\"yt-spinner \"\u003e\n        \u003cspan class=\"yt-spinner-img  yt-sprite\" title=\"Loading icon\"\u003e\u003c\/span\u003e\n\n    \u003cspan class=\"yt-spinner-message\"\u003e\n        Working...\n    \u003c\/span\u003e\n  \u003c\/p\u003e\n\n      \u003c\/div\u003e\n  \u003c\/div\u003e\n\n          \u003c\/div\u003e\n        \u003c\/div\u003e\n        \u003cdiv class=\"yt-dialog-focus-trap\" tabindex=\"0\"\u003e\u003c\/div\u003e\n      \u003c\/div\u003e\n    \u003c\/div\u003e\n  \u003c\/div\u003e\n\n\n    \u003c\/div\u003e\n\n"
+  });
+  yt.setConfig('GOOGLE_HELP_CONTEXT', "unlimited");
+ytcsi.info('st', 168);ytcfg.set({"TIMING_INFO":{"GetBrowse_rid":"0x5ea4e9ecf91c9fd4","cver":"1.20170517","yt_lt":"cold","c":"WEB","yt_li":"1"},"TIMING_ACTION":"","CSI_VIEWPORT":true,"CSI_SERVICE_NAME":"youtube"});;  yt.setConfig({
+      'XSRF_TOKEN': "QUFFLUhqazVYMUNJV05KMFpfT0kxNk5aMFdNNnhsZFdOUXxBQ3Jtc0tsTGU1am95Q01CM3ZFYmZ5Y2RZX2kzZmNaQWZqSHR4T1BjLU5EOWx1XzA2SXBlVEM1eEFiX1JYd25uQkMyRzFKTEl1SXRQUTY1SEduMFhFT2t2T1ZkYkN1YTdtU1kwR094T1dTeS10a2hXNmxWcWNkdmFNTFJVbmtjVVhIQ2k4ckhvNHhsU3hIV21kZC1OaWNhWE1mQjhvVU0wVmc=",
+      'XSRF_FIELD_NAME': "session_token",
 
-<script src="jquery.js"></script>
-<script>
-
-score = 0;
-
-tetris = {
-		types : [[';', '(', ')', '{', '}'],
-		         ['=', '!=', '==', '<', '>'],
-		         ['1', '2', '4', '8'],
-		         ['+', '*', '/'],
-		         [' '],
-		         ['score', 'a', 'b', 'c', 'x', 'y', 'z'],
-		         ['for', 'if', 'while', 'do', 'function', 'return']
-		         ],
-		         
-		sizes : [1, 1, 1, 1, 1, 2, 1],
-		colors : ['#900', '#090', '#009', '#990', '#099', '#909', '#444'],
-		bgcolors : ['#fcc', '#cfc', '#ccf', '#ffc', '#cff', '#fcf', '#ccc'],
-		         
-		blocks : [],
-		
-		margin : 5,
-		h : 16, // in blockw
-		w : 16, // in blockw
-		blockw : 30,
-		
-		play : function(canvasId) {
-			var scene = document.getElementById(canvasId);
-			tetris.ctx = scene.getContext('2d');
-			
-			tetris.nextBlock = tetris.newBlock();
-			tetris.loop();
-		},
-		
-		drawBoard : function() {
-			var ctx = tetris.ctx; 
-			ctx.lineWidth = 2;
-			
-			ctx.clearRect(0, 0, 700, 700);
-			
-			ctx.fillStyle = "rgb(200,0,0)";
-			ctx.fillText("Score: "+score, tetris.w*tetris.blockw + 20, 30);
-			
-			this.ctx.strokeStyle = "rgb(200,0,0)";
-			this.ctx.fillStyle = "rgb(255,255,255)";
-			
-			ctx.beginPath();
-			tetris.rect(0,0,tetris.w*tetris.blockw,tetris.h*tetris.blockw);
-			ctx.fill();
-			ctx.stroke();
-		},
-		
-		rect : function(x, y, width, height, radius) {
-			radius = radius || 5;
-			x += tetris.margin;
-			y += tetris.margin;
-			var ctx = tetris.ctx;
-			ctx.moveTo(x + radius, y);
-			ctx.lineTo(x + width - radius, y);
-			ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
-			ctx.lineTo(x + width, y + height - radius);
-			ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
-			ctx.lineTo(x + radius, y + height);
-			ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
-			ctx.lineTo(x, y + radius);
-			ctx.quadraticCurveTo(x, y, x + radius, y);
-		},
-		
-		drawBlocks : function() {
-			if (tetris.nextBlock) {
-				tetris.drawBlock(tetris.nextBlock, (tetris.w-tetris.nextBlock.x)*tetris.blockw + 20, 80);
-			}
-			
-			if (tetris.block) {
-				tetris.drawBlock(tetris.block);
-			}
-			for (var i in tetris.blocks) {
-				var b = tetris.blocks[i];
-				tetris.drawBlock(b);
-			}
-		},
-		
-		drawBlock : function(b,x,y) {
-			x = x || 0;
-		 	y = y || 0;
-		 	var w = tetris.sizes[b.type];
-			var ctx = tetris.ctx; 
-			ctx.beginPath();
-			tetris.rect(x+b.x*tetris.blockw,y+b.y*tetris.blockw, w*tetris.blockw,tetris.blockw);
-			ctx.strokeStyle = tetris.colors[b.type];
-			ctx.fillStyle = tetris.bgcolors[b.type];
-			ctx.fill();
-			ctx.stroke();
-			ctx.fillStyle = tetris.colors[b.type];
-			var txt = tetris.types[b.type][b.seq];
-			ctx.fillText(txt, x+(b.x+0.35)*tetris.blockw,y+(b.y+0.65)*tetris.blockw);
-		},
-		
-		setGameOver : function() {
-			tetris.gameOver = true;
-			
-			var ctx = tetris.ctx;
-			ctx.fillStyle = "rgb(0,0,0)";
-			ctx.fillText("GAME OVER", 100, 100);
-		},
-		
-		checkSuccess : function(row) {
-			var rowBlocks = [];
-			
-			for (var i in tetris.blocks) {
-				var b = tetris.blocks[i];
-				if (b.y === row) {
-					rowBlocks.push(b);
-				}
-			}
-			
-			var success = tetris.isRowComplete(rowBlocks);
-			
-			if (!success) {
-				return;
-			}
-			
-			score += 100;
-			
-			// move all one row down and remove scored row
-			for (var i = tetris.blocks.length -1; i >= 0; i--) {
-				var b = tetris.blocks[i];
-				if (b.y === row) {
-					tetris.blocks.splice(i, 1);
-				} else if (b.y < row) {
-					b.y++;
-				}
-			}
-			
-			rowBlocks.sort(function(a,b) {
-				return a.x - b.x;
-			});
-			var str = "";
-			for (var i in rowBlocks) {
-				var b = rowBlocks[i];
-				str += tetris.types[b.type][b.seq];
-			}
-			$("#out").append(str+"\n");
-			try {
-				eval(str);
-			} catch(err) {
-				$("#out").append(err);
-				tetris.setGameOver();
-			}
-		},
-		
-		isRowComplete :function(blocks) {
-			var len = 0;
-			for (var i in blocks) {
-				var b = blocks[i];
-				len += tetris.sizes[b.type];
-			}
-			
-			return len == tetris.w;
-		},
-		
-		updateBlock : function() {
-			if (tetris.block === undefined) {
-				tetris.block = tetris.nextBlock;
-				tetris.nextBlock = tetris.newBlock();
-				return;
-			}
-			
-			if (tetris.block.y+1 == tetris.h) {
-				tetris.blocks.push(tetris.block);
-				tetris.checkSuccess(tetris.block.y);
-				
-				var b = tetris.getBlock(tetris.nextBlock.x, tetris.nextBlock.y, tetris.sizes[tetris.newBlock.type]);
-				if (b !== undefined) {
-					tetris.setGameOver();
-					return;
-				}
-				tetris.block = tetris.nextBlock;
-				tetris.nextBlock = tetris.newBlock();
-				return;
-			}
-			
-			if (tetris.getBlock(tetris.block.x, tetris.block.y+1, tetris.sizes[tetris.block.type]) == undefined) {
-				tetris.block.y += 1;
-				return;
-			}
-			
-			tetris.blocks.push(tetris.block);
-			tetris.checkSuccess(tetris.block.y);
-			
-			var b = tetris.getBlock(tetris.nextBlock.x, tetris.nextBlock.y, tetris.sizes[tetris.block.type]);
-			if (b !== undefined) {
-				tetris.setGameOver();
-				return;
-			}
-			tetris.block = tetris.nextBlock;
-			tetris.nextBlock = tetris.newBlock();
-		},
-		
-		getBlock : function (x, y, w) {
-			w = w || 1;
-			for (var i in tetris.blocks) {
-				var b = tetris.blocks[i];
-				if (((b.x < x + w) && (x < b.x + tetris.sizes[b.type])) 
-						&& (b.y === y)) {
-					return b;
-				}
-			}
-			
-			return undefined;
-		},
-		
-		getTopBlock : function (x, w) {
-			w = w || 1;
-			var max = tetris.h + 1;
-			var found = undefined;
-			for (var i in tetris.blocks) {
-				var b = tetris.blocks[i];
-				if (((b.x < x + w) && (x < b.x + tetris.sizes[b.type])) && (b.y < max)) {
-					max = b.y;
-					found = b;
-				}
-			}
-			
-			return found;
-		},
-		
-		newBlock : function() {
-			var t = Math.round(Math.random() * 1000) % tetris.types.length;
-			return {x : tetris.w/2 - 1, y : 0, type : t, seq : 0 };
-		},
-		
-		redraw : function() {
-			tetris.drawBoard();
-			tetris.drawBlocks();
-		},
-		
-		loop : function() {
-			tetris.redraw();
-			tetris.updateBlock();
-			
-			if (tetris.gameOver === undefined) {
-				setTimeout(tetris.loop, 500);
-			}
-		},
-		
-		handleKey : function(event) {
-			if (tetris.gameOver !== undefined) {
-				return;
-			}
-			
-			if (event.keyCode === 37) { // left
-				if (tetris.block.x > 0) {
-					tetris.block.x--;
-				}
-			} else if (event.keyCode === 39) { // right
-				if (tetris.block.x + tetris.sizes[tetris.block.type] < tetris.w) {
-					tetris.block.x++;
-				}
-			} else if (event.keyCode === 40) { // down
-				var b = tetris.getTopBlock(tetris.block.x, tetris.sizes[tetris.block.type]);
-			    if (!b) {
-			    	tetris.block.y = tetris.h - 1;
-			    } else {
-			    	tetris.block.y = b.y - 1;
-			    }
-			} else if (event.keyCode === 38) { // up
-					tetris.block.seq = (tetris.block.seq + 1) % (tetris.types[tetris.block.type].length);
-			}
-			
-			tetris.redraw();
-		}
-}
-
-</script>
-
-
-
-<canvas id="scene" width="700" height="630">
-Your browser is too old to play. Please do update.
-</canvas>
-<pre>
-<div id="out">
-</div>
-</pre>
-</body>
-</html>
+      'XSRF_REDIRECT_TOKEN': "GUEZo3tclkwksuWAPbg5WD23By18MTQ5NTIzNDA2OEAxNDk1MTQ3NjY4"  });
+yt.setConfig('ID_TOKEN', "QUFFLUhqa1JhbWxxMUZoaEtsbHA0aWNPWlZnOVh3QnZnQXw=");window.ytcfg.set('SERVICE_WORKER_KILLSWITCH', false);  yt.setConfig('THUMB_DELAY_LOAD_BUFFER', 0);
+if (window.ytcsi) {window.ytcsi.tick("jl", null, '');}</script>
