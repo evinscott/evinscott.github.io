@@ -1,0 +1,1 @@
+bazel build -c opt --config=ios_arm64 --define 3D=true mediapipe/examples/ios/handtrackinggpu:HandTrackingGpuApp
